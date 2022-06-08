@@ -8,7 +8,7 @@
     "test": "jest --coverage",
     "test coverage": "jest --coverage"
   },
-  "author": "Flexiloans",
+  "author": "Mitchelle Creado",
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.608.0",

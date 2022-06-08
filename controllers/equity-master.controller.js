@@ -20,7 +20,7 @@ class EquityMasterController {
 		 *     "client_code: client_code"
 		 *
 		 * @apiExample {bash} Curl example
-		 * curl -X POST -H "client_code: client_code" -i https://console.flexiloans.com/v1/equity-master
+		 * curl -X POST -H "client_code: client_code" -i https://console.neo.com/v1/equity-master
 		 *
 		 * @apiSuccess {String} result <code>created</code> if everything went fine.
 		 * @apiSuccessExample {json} Success-Example

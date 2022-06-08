@@ -32,15 +32,15 @@ test('Negative test for SqlBiz.get_one()', async () => {
 });
 
 test('Positive test for SqlBiz.insert()', async () => {
-    let query = `INSERT INTO users_bck (name, email, password, colender_id,is_active)VALUES('TEST_USER','${new Date().getTime()}@FLEXILOANS.COM','TEST','1','1')`;
+    let query = `INSERT INTO users_bck (name, email, password, colender_id,is_active)VALUES('TEST_USER','${new Date().getTime()}@NEO.COM','TEST','1','1')`;
     let data = {
-        email : `${new Date().getTime()}@FLEXILOANS.COM`
+        email : `${new Date().getTime()}@NEO.COM`
     }
     await expect(new SqlBiz().insert(query,data)).resolves.toBeDefined();
 });
 
 test('Negative test for SqlBiz.insert()', async () => {
-    let query = `INSERT INTO users_bck (name, email, password, colender_id,is_active)VALUES('TEST_USER','TEST@FLEXILOANS.COM','TEST','1','1')`;
+    let query = `INSERT INTO users_bck (name, email, password, colender_id,is_active)VALUES('TEST_USER','TEST@NEO.COM','TEST','1','1')`;
     let data = {
 
     }
@@ -48,7 +48,7 @@ test('Negative test for SqlBiz.insert()', async () => {
 });
 
 test('Positive test for SqlBiz.update()', async () => {
-    let query = `UPDATE users_bck SET is_active=0 WHERE email='TEST@FLEXILOANS.COM'`;
+    let query = `UPDATE users_bck SET is_active=0 WHERE email='TEST@NEO.COM'`;
     let data = {
 
     }
@@ -57,7 +57,7 @@ test('Positive test for SqlBiz.update()', async () => {
 
 
 test('Negative test for SqlBiz.update()', async () => {
-    let query = `UPDATE users_bcktest SET is_active=0 WHERE email='TEST@FLEXILOANS.COM'`;
+    let query = `UPDATE users_bcktest SET is_active=0 WHERE email='TEST@NEO.COM'`;
     let data = {
 
     }
