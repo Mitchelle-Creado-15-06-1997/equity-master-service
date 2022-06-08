@@ -1,0 +1,21 @@
+{
+  "name": "EQUITY MASTER SERVICE",
+  "version": "1.0.0",
+  "description": "Equity master service for the APIs which are constant for quite sometime",
+  "title": "Equity Master API",
+  "url" : "https://console.neo.com",
+  "sampleUrl": "https://console.neo.com",
+  "header": {
+    "title": "Introduction",
+    "filename": "header.md"
+  },
+  "footer": {
+    "title": "Closing",
+    "filename": "footer.md"
+  },
+  "template": {
+    "withCompare": true,
+    "withGenerator": true,
+    "aloneDisplay": false
+  }
+}
