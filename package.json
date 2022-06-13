@@ -13,6 +13,7 @@
   "author": "Mitchelle Creado",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^3.15.1",
     "aws-sdk": "^2.608.0",
     "cli-color": "^2.0.0",
     "config": "^3.2.4",
@@ -59,6 +60,7 @@
     "zip-folder": "^1.0.0"
   },
   "devDependencies": {
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "prisma": "^3.15.1"
   }
 }
