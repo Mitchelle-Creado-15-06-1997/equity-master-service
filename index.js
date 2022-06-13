@@ -49,7 +49,7 @@ app.use(requestMiddleware);
 app.use(responseMiddleware);
 
 // Routes will always go here 
-app.use('/equity-master', require('./routes/urls'));
+app.use('/master', require('./routes/urls'));
 
 app.use(errorHandlingMiddleware);
 // Do not change order above this
@@ -60,17 +60,17 @@ mongoConnect(()=>{
   });
 
 //error logger global
-// global.logger = logger();
+global.logger = logger();
 
 //console logging
-// consoleLogger();
+consoleLogger();
 
 //exit everything 
 process.on('SIGINT', () => {
     process.exit(0);
 });
 
-var port = process.env.PORT || 8001;
+var port = process.env.PORT || 8006;
 app.listen(port);
 
 console.log(`Server started on port ${port} on ENV: ${process.env.NODE_ENV}`);
