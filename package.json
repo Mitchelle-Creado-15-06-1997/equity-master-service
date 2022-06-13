@@ -48,6 +48,7 @@
     "sha256": "^0.2.0",
     "sql-bricks": "^2.0.5",
     "stjs": "0.0.5",
+    "swagger-ui-express": "^4.4.0",
     "unescape": "^1.0.1",
     "unzipper": "^0.10.5",
     "util": "^0.12.1",

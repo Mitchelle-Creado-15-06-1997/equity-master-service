@@ -37,9 +37,7 @@
         }
     },
     "app_config": {
-        "client_code": [
-            "ht_front"
-        ]
+        "client_code": ["neo-equity"]
     },
     "TEST": {
         "url": "https://test.test.co",
