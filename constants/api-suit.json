@@ -48,5 +48,35 @@
         "name": "EVENT QUIICKWORKS",
         "scopes": "*",
         "service": "QUICKWORK"
-    }
+    },
+    "SECTOR" : {
+       "CMOT" : {
+            "endpoint": "api/SectorList",
+            "method": "GET",
+            "action_code": "FETCH_SECTOR_MASTER",
+            "name": "CMOT",
+            "scopes": "*",
+            "service": "CMOT"
+       }
+    },
+    "COMPANY" : {
+        "CMOT" : {
+             "endpoint": "api/CompanyMaster",
+             "method": "GET",
+             "action_code": "FETCH_COMPANY_MASTER",
+             "name": "CMOT",
+             "scopes": "*",
+             "service": "CMOT"
+        }
+     },
+    "INDEX" : {
+        "CMOT" : {
+             "endpoint": "api/GroupMaster/{exchange_type}",
+             "method": "GET",
+             "action_code": "FETCH_INDEX_MASTER",
+             "name": "CMOT",
+             "scopes": "*",
+             "service": "CMOT"
+        }
+     }
 }

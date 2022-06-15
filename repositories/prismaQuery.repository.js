@@ -72,6 +72,18 @@ class PrismaRepo {
 		});
   }
 
+  createMany(obj,table_name) {
+		return new Promise(async (resolve, reject) => {	
+			try {
+        var result = [];
+        result = await prisma[table_name].createMany(obj)
+        resolve(result);
+			} catch (error) {
+				reject(error);
+			}
+		});
+  }
+
   update(where,data,table_name) {
 		return new Promise(async (resolve, reject) => {	
 			try {

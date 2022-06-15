@@ -28,9 +28,39 @@ module.exports = {
 	equityMasterSchema: {
 		id: '/equityMasterSchema',
 		type: 'object',
-		required: [],
+		required: ['vendor', 'master_code'],
 		properties: {
+			vendor: { type: 'string' },
+			master_code: { type: 'string', enum: Constants.MASTER_CODE }
+		}
+	},
+	equity: {
+		INDEX : {
+			CMOT: {
+				id: '/indexMasterCmot',
+				type: 'object',
+				required: ['exchange_type'],
+				properties: {
+					exchange_type: { type: 'string', enum: Constants.EXCHANGE_TYPE }
+				}
+			}
 		},
+		SECTOR : {
+			CMOT: {
+				id: '/sectorMasterCmot',
+				type: 'object',
+				required: [],
+				properties: {}
+			}
+		},
+		COMPANY : {
+			CMOT: {
+				id: '/companyMasterCmot',
+				type: 'object',
+				required: [],
+				properties: {}
+			}
+		}
 	},
 	fuzzySchema: {
 		id: '/fuzzySchema',
@@ -39,7 +69,7 @@ module.exports = {
 		properties: {
 			full_name: { type: 'string' },
 			match_name: { type: 'string' }
-		},
+		}
 	},
 	header: {
 		id: '/header',
@@ -47,7 +77,7 @@ module.exports = {
 		required: ['client_code'],
 		properties: {
 			client_code: { type: 'string', enum: Constants.CLIENT_CODES },
-		},
+		}
 	},
 	fetchUserById: {
 		id: '/fetchUserById',
@@ -56,7 +86,7 @@ module.exports = {
 		required: ["user_id"],
 		properties: {
 			"user_id": { "type": "string" }
-		},
+		}
 	},
 	fetchServiceTypeById: {
 		id: '/serviceType',
@@ -65,6 +95,6 @@ module.exports = {
 		required: ["servicetype_id"],
 		properties: {
 			"servicetype_id": { "type": "string" }
-		},
+		}
 	}
 };

@@ -40,5 +40,11 @@
         "content_type" : "application/json",
         "encoding" : null,
         "connection" : "keep-alive"
+    },
+    "CMOT" : {
+        "url" : "http://neowealthapis.cmots.com/",
+        "content_type" : "application/json",
+        "encoding" : null,
+        "connection" : "keep-alive"
     }
 }

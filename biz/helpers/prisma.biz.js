@@ -64,6 +64,18 @@ class PrismaBiz {
 		});
     }
 
+	createMany(obj,table_name) {
+		return new Promise(async (resolve, reject) => {	
+			try {
+                var result = [];
+                result = await this.queryRepo.createMany(obj,table_name)
+                resolve(result);
+			} catch (error) {
+				reject(error);
+			}
+		});
+    }
+
     update(where,data,table_name) {
 		return new Promise(async (resolve, reject) => {	
 			try {
