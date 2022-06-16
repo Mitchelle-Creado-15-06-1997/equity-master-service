@@ -23,6 +23,34 @@ class MongoQueryRepository {
             }
         })
     }
+
+    insertMany(data, collection) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const result = await mongo.insertMany(collection, data);
+                if(result){
+                    return resolve(result);
+                }
+                return resolve(null);
+            } catch (error) {
+                reject(error);
+            }
+        })
+    }
+
+    deleteMany(data, collection) {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const result = await mongo.deleteMany(collection, data);
+                if(result){
+                    return resolve(result);
+                }
+                return resolve(null);
+            } catch (error) {
+                reject(error);
+            }
+        })
+    }
 }
 
 module.exports = MongoQueryRepository;

@@ -49,34 +49,38 @@
         "scopes": "*",
         "service": "QUICKWORK"
     },
-    "SECTOR" : {
-       "CMOT" : {
+    "CMOT" : {
+       "SECTOR" : {
             "endpoint": "api/SectorList",
             "method": "GET",
             "action_code": "FETCH_SECTOR_MASTER",
             "name": "CMOT",
             "scopes": "*",
             "service": "CMOT"
+       },
+       "COMPANY" : {
+            "endpoint": "api/CompanyMaster",
+            "method": "GET",
+            "action_code": "FETCH_COMPANY_MASTER",
+            "name": "CMOT",
+            "scopes": "*",
+            "service": "CMOT"
+        },
+        "INDEX" : {
+            "endpoint": "api/GroupMaster/{exchange_type}",
+            "method": "GET",
+            "action_code": "FETCH_INDEX_MASTER",
+            "name": "CMOT",
+            "scopes": "*",
+            "service": "CMOT"
+       },
+       "COMPANY_ADDRESS" : {
+            "endpoint": "api/GroupMaster/{exchange_type}",
+            "method": "GET",
+            "action_code": "FETCH_INDEX_MASTER",
+            "name": "CMOT",
+            "scopes": "*",
+            "service": "CMOT"
        }
-    },
-    "COMPANY" : {
-        "CMOT" : {
-             "endpoint": "api/CompanyMaster",
-             "method": "GET",
-             "action_code": "FETCH_COMPANY_MASTER",
-             "name": "CMOT",
-             "scopes": "*",
-             "service": "CMOT"
-        }
-     },
-    "INDEX" : {
-        "CMOT" : {
-             "endpoint": "api/GroupMaster/{exchange_type}",
-             "method": "GET",
-             "action_code": "FETCH_INDEX_MASTER",
-             "name": "CMOT",
-             "scopes": "*",
-             "service": "CMOT"
-        }
-     }
+    }
 }

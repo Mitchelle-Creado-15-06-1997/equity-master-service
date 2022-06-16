@@ -1,7 +1,7 @@
 const RequestValidator = require('../validators/request.validator');
 const ResponseDecorator = require('../validators/response.decorator');
 const CONSTANTS = require('../constants/appConstants');
-const { equityMasterSchema } = require('../schema/schema-suit');
+const { equityMasterSchema, equityMasterCronSchema } = require('../schema/schema-suit');
 const EquityMasterBiz = require('../biz/equity-master.biz');
 
 class EquityMasterController {
@@ -29,11 +29,11 @@ class EquityMasterController {
 						CONSTANTS.LOGGING
 					],
 					data: { 
-							action : CONSTANTS.ACTION.EQUITY_MASTER_CREATED,
-							headers : { ...request.headers},
-							request: {...request.params,...request.body},
-							response: result
-				}
+						action : CONSTANTS.ACTION.EQUITY_MASTER_CREATED,
+						headers : { ...request.headers},
+						request: {...request.params,...request.body},
+						response: result
+					}
 				});
 			} catch (error) {
 				next(error);
@@ -70,32 +70,35 @@ class EquityMasterController {
 				next(error);
 			}
 		})
-		.put(async (request, response, next) => {
+
+		app.route('/v1/equity/cron')
+		.get(async (request, response, next) => {
 			try {
 				const {
 					client_code
 				} = request.header;
-				
-				const validator = new RequestValidator(equityMasterSchema);
-				validator.create({...request.params,...request.body,...request.query});
+
+				// Validating request
+				new RequestValidator(equityMasterCronSchema).create({...request.params,...request.query})
 
 				const equityMasterBiz = new EquityMasterBiz();
-				const _result = await equityMasterBiz.update({...request.params,...request.body,...request.query});
+				const _result = await equityMasterBiz.masterCron({...request.params,...request.query});
 				
-				const responseDecorator = new ResponseDecorator({...request.params,...request.body,...request.query});
+				const responseDecorator = new ResponseDecorator({...request.params,...request.body,client_code});
 				const result = responseDecorator.decorate(_result);
 				
 				response.json({
 					result,
-				}, `updated equity master successfully.`, {
+				}, `Cron running....`, {
 					services: [
 						CONSTANTS.LOGGING
 					],
 					data: { 
-							action : CONSTANTS.ACTION.EQUITY_MASTER_UPDATED,
-							request: {...request.params,...request.body,...request.query,client_code},
-							response: result
-				}
+						action : CONSTANTS.ACTION.EQUITY_MASTER_CREATED,
+						headers : { ...request.headers},
+						request: {...request.params,...request.body},
+						response: result
+					}
 				});
 			} catch (error) {
 				next(error);

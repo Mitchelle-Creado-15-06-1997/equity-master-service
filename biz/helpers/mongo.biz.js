@@ -23,6 +23,28 @@ class MongoBiz {
 			}
 		});
 	}
+
+	insertMany(data,collection) {
+		return new Promise(async (resolve, reject) => {	
+			try {
+                let result = await this.mongoQueryRepo.insertMany(data, collection);
+                return resolve(result);
+			} catch (error) {
+				reject(error);
+			}
+		});
+	}
+
+	deleteMany(data,collection) {
+		return new Promise(async (resolve, reject) => {	
+			try {
+                let result = await this.mongoQueryRepo.deleteMany(data, collection);
+                return resolve(result);
+			} catch (error) {
+				reject(error);
+			}
+		});
+	}
 }
 
 module.exports = MongoBiz;

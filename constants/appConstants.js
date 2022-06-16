@@ -36,12 +36,16 @@ module.exports = {
 
 	},
 	INDEX: {
+		PARAMS: ['BSE', 'NSE'],
+		PARAM_NAME: 'exchange_type',
 		CMOT: 'eq_cmot_index_master'
 	},
 	SECTOR: {
+		PARAMS: [],
 		CMOT: 'eq_cmot_sector_master'
 	},
 	COMPANY: {
+		PARAMS: [],
 		CMOT: 'eq_cmot_company_master'
 	},
 	SEARCH_LIST : ["loan_code", "loanCode", "code"],

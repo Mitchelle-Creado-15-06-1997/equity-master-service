@@ -76,7 +76,7 @@ class PrismaRepo {
 		return new Promise(async (resolve, reject) => {	
 			try {
         var result = [];
-        result = await prisma[table_name].createMany(obj)
+        result = await prisma.eq_cmot_company_master.createMany(obj)
         resolve(result);
 			} catch (error) {
 				reject(error);

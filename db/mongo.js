@@ -28,6 +28,30 @@ module.exports = {
 		}
 	}),
 
+	insertMany: (collection, data) => new Promise(async (resolve, reject) => {
+		try {
+			if (!db) {
+				throw new BaseException('Mongo Connection Exception occured');
+			}
+			const result = await db.collection(collection).insertMany(data);
+			return resolve(result);
+		} catch (error) {
+			return reject(error);
+		}
+	}),
+
+	deleteMany: (collection, data) => new Promise(async (resolve, reject) => {
+		try {
+			if (!db) {
+				throw new BaseException('Mongo Connection Exception occured');
+			}
+			const result = await db.collection(collection).deleteMany(data);
+			return resolve(result);
+		} catch (error) {
+			return reject(error);
+		}
+	}),
+
 	deleteOne: (collection, data) => new Promise(async (resolve, reject) => {
 		try {
 			if (!db) {

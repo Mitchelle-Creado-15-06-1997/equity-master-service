@@ -34,6 +34,12 @@ module.exports = {
 			master_code: { type: 'string', enum: Constants.MASTER_CODE }
 		}
 	},
+	equityMasterCronSchema: {
+		id: '/equityMasterSchema',
+		type: 'object',
+		required: [],
+		properties: {}
+	},
 	equity: {
 		INDEX : {
 			CMOT: {
